@@ -3,11 +3,11 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger: 
- - main
-pool:
+ trigger:   
+ - main 
+ pool:
   vmImage: ubuntu-latest
- #pipelines >Stages > Jobs > Tasks(Steps)
+  #pipelines >Stages > Jobs > Tasks(Steps)
   jobs:
   -job: Job1
   steps:
