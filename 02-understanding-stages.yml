@@ -42,9 +42,9 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
          - job: SecondJob
-     steps:
-     - bash: echo Build SecondJob
-- stage: DevDeploy
+steps:
+ - bash: echo Build SecondJob
+ -  stage: DevDeploy
    variables:
      environment: Dev
   dependsOn: Build
@@ -54,8 +54,11 @@ stages:
     - bash: echo $(environment)DeployJob
  - stage: QADeploy
    variables:
-     environment: QA
- - stage: ProdDeploy#   dependsOn: 
+     environment: QA  
+      -  stage: ProDeploy
+ 
+  dependsOn: 
+
   - DevDeploy
    - QADeploy
    jobs:
